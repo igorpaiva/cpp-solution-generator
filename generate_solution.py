@@ -29,9 +29,9 @@ def create_files(base_path, solution_name_pascal, project_guid, main_guid, solut
     with open(os.path.join(base_path, "include", f"{solution_name_pascal}.hpp"), "w") as header_file:
         header_file.write(f"#ifndef {solution_name_pascal.upper()}_HPP\n#define {solution_name_pascal.upper()}_HPP\n\n#endif")
     with open(os.path.join(base_path, "src", f"{solution_name_pascal}.cpp"), "w") as source_file:
-        source_file.write(f'#include "{solution_name_pascal}.hpp"\n\nint main() {{\n    return 0;\n}}')
-    with open(os.path.join(base_path, "./", f"{solution_name_pascal}.cpp"), "w") as source_file:
-        source_file.write(f'#include "{solution_name_pascal}.hpp"\n\nint main() {{\n    return 0;\n}}')
+        source_file.write(f'#include "{solution_name_pascal}.hpp"')
+    with open(os.path.join(base_path, "./", f"Main.cpp"), "w") as source_file:
+        source_file.write(f'int main() {{\n    return 0;\n}}')
 
 def read_template(file_path):
     try:
